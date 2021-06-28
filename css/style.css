@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(216, 229, 240);
+    display: grid;
+    grid-template-columns: auto auto auto; 
+}
+h1{
+    /* position: relative;
+    left: 600px; */
+    width:  240px;
+    background-color: rgb(60, 148, 48);
+    border-radius: 10px;
+    margin: 2px;
+    text-align: center;
+
+}
+.life{
+    /* position: relative;
+    left: 630px; */
+    color: rgb(233, 43, 91);
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.back-board{
+    /* position: relative;
+    left: 600px; */
+  
+    /* flex-direction: column; */
+}
+.difficult-main{
+    display: flex;
+    justify-content: center;
+}
+.btn-container{
+    display: flex;
+    flex-direction: column;
+}
+.timer{
+    /* text-align: center; */
+    font-size: xx-large;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    width : 200px;
+}
+
+.details{
+    padding-top: 10px;
+}
+button{
+    border-radius: 10px;
+    padding: 7px;
+    margin-top : 5px ;
+    color: rgb(53, 13, 128);
+    font-size: large;
+    width: 100px;
+    
+
+}
+.cell{
+    size: 303px;
+    background-color: rgb(216, 105, 192);
+    border-radius: 10px;
+    
+}
+.hid{
+    background-color: rgb(170, 190, 235);
+    
+}
+
+th,td {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    
+}
