@@ -106,7 +106,7 @@ function cellClicked(elCell, i, j) {
     } else if (gBoard[i][j].minesAroundCount) {
         elCell.innerHTML = gBoard[i][j].minesAroundCount;
         elCell.classList.add('hid')
-        if ((gGame.markSuccess === (gMinesArr.length)) && (allCellsShown())) {
+        if ((gGame.markSuccess === (gMinesArr.length)) || (allCellsShown())) {
             winner();
         }
         return
@@ -335,13 +335,11 @@ function extreme(elButton) {
 function allCellsShown() {
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[0].length; j++) {
-
             var elCell = document.querySelector('[data-i="' + i + '"][data-j="' + j + '"]');
             if ((gBoard[i][j].isMine === false) && (elCell.classList.contains('hid') === false)) {
                 console.log('gBoard[i][j].isMine', gBoard[i][j].isMine, i, j);
                 console.log('elCell.classList.contains(hid)', elCell.classList.contains('hid'), i, j);
                 return false;
-
             }
         }
     }

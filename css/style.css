@@ -61,6 +61,7 @@ button{
     size: 303px;
     background-color: rgb(216, 105, 192);
     border-radius: 10px;
+    cursor: pointer;
     
 }
 .hid{
