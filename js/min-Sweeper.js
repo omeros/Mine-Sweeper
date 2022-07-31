@@ -105,7 +105,7 @@ function cellClicked(elCell, i, j) {
         return
     } else if (gBoard[i][j].minesAroundCount) {
         elCell.innerHTML = gBoard[i][j].minesAroundCount;
-        elCell.classList.add('hid')
+        elCell.classList.add('hide')
         if ((gGame.markSuccess === (gMinesArr.length)) || (allCellsShown())) {
             winner();
         }
@@ -116,14 +116,14 @@ function cellClicked(elCell, i, j) {
 
 }
 
-//******************************* Recursion Search ************************************************** */
+//******************************* Recursion function ************************************************** */
 function emptyClicked(elCell, i, j) {
     //********************************************************************************** */
     if ((i < 0) || (j < 0) || (i > gBoard.length - 1) || (j > gBoard[0].length - 1)) {
         return;
     } else if (gBoard[i][j].isMine) {
         return;
-    } else if (elCell.classList.contains("hid")) {
+    } else if (elCell.classList.contains("hide")) {
         return;
     } else if (elCell.innerHTML === FLAG) {
         return
@@ -131,7 +131,7 @@ function emptyClicked(elCell, i, j) {
         cellClicked(elCell, i, j);
         return;
     } else if (gBoard[i][j].minesAroundCount === 0) {
-        elCell.classList.add('hid')
+        elCell.classList.add('hide')
         var idx = i + 1;
         var jdx = j
         var elNextDownMove = document.querySelector('[data-i="' + idx + '"][data-j="' + jdx + '"]');
@@ -209,7 +209,7 @@ function WhichButton(event, elCell, i, j) {
     } else if (event.button == 2) {                  // rigth clicked
         event.preventDefault();
         event.stopPropagation();
-        if (elCell.classList.contains('hid')) {
+        if (elCell.classList.contains('hide')) {
             return
         } else if (elCell.innerHTML === FLAG) {
             elCell.innerHTML = ""
@@ -336,9 +336,9 @@ function allCellsShown() {
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[0].length; j++) {
             var elCell = document.querySelector('[data-i="' + i + '"][data-j="' + j + '"]');
-            if ((gBoard[i][j].isMine === false) && (elCell.classList.contains('hid') === false)) {
+            if ((gBoard[i][j].isMine === false) && (elCell.classList.contains('hide') === false)) {
                 console.log('gBoard[i][j].isMine', gBoard[i][j].isMine, i, j);
-                console.log('elCell.classList.contains(hid)', elCell.classList.contains('hid'), i, j);
+                console.log('elCell.classList.contains(hide)', elCell.classList.contains('hide'), i, j);
                 return false;
             }
         }

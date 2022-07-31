@@ -54,7 +54,7 @@ button{
     color: rgb(53, 13, 128);
     font-size: large;
     width: 100px;
-    
+    cursor: pointer;
 
 }
 .cell{
@@ -64,7 +64,7 @@ button{
     cursor: pointer;
     
 }
-.hid{
+.hide{
     background-color: rgb(170, 190, 235);
     
 }
