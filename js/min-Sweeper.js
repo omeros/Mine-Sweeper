@@ -2,7 +2,7 @@
 
 const BOMB = '💣';
 const FLAG = '🚩';
-const FAILS = 3;
+const FAILS = 2;
 
 var gLevelIdx = 0;
 var gBoard;
