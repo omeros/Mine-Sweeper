@@ -26,7 +26,7 @@ var gGame = {
     markedCount: 0,
     secsPassed: 0,
     markSuccess: 0,
-    life: 3
+    life: FAILS
 }
 
 function initGame() {
@@ -36,12 +36,13 @@ function initGame() {
     gTime = 0;
     gTotalSeconds = 0;
     gTimerVar = null;
-    gGame.life = 3;
+    gGame.life = FAILS;
     gisFirstCliked = true;
     var el = document.querySelector('.outcome')
     el.innerHTML = 'Mine Sweeper';
     gBoard = buildBoard();
     renderBoard(gBoard)
+    document.getElementById('fails').innerText = FAILS
     // var el = document.querySelector('.timer');
     // el.style.width = "200px";
 }
@@ -106,8 +107,7 @@ function cellClicked(elCell, i, j) {
     } else if (gBoard[i][j].minesAroundCount) {
         elCell.innerHTML = gBoard[i][j].minesAroundCount;
         elCell.classList.add('hide')
-        // if ((gGame.markSuccess === (gMinesArr.length)) || (allCellsShown())) {
-        if ( allCellsShown()) {
+        if ( (allCellsShown())) {
             winner();
         }
         return
@@ -176,9 +176,9 @@ function cellMarked(elCell) {
 function checkGameOver() {
     //gGame.life++;
     gGame.life--;
-    var elLife = document.querySelector('.life');
     var l = gGame.life;
-    elLife.innerHTML = 'LIFE : ' + l;
+    document.getElementById('fails').innerText = gGame.life
+
     if (gGame.life === 0) {
         gameOver();
     }
@@ -292,7 +292,8 @@ function easy(elButton) {
     el.style.width = "200px";
     el = document.querySelector('.life');
     el.style.left = '630px'
-    el.innerHTML = 'LIFE : 3';
+    // el.innerText = 'LIFE :';
+    // document.getElementById('fails').innerText = 2
     document.querySelector(".timer").innerHTML = '00:00:00';
     initGame();
 }
@@ -309,7 +310,8 @@ function hard() {
     el = document.querySelector('h1');
     el.style.width = "380px";
     el = document.querySelector('.life');
-    el.innerHTML = 'LIFE : 3';
+    // el.innerText = 'LIFE :';
+    // document.getElementById('fails').innerText = 2
     el.style.left = '730px'
     document.querySelector(".timer").innerHTML = '00:00:00';
     initGame();
@@ -327,7 +329,8 @@ function extreme(elButton) {
     el.style.width = "550px"
     el = document.querySelector('.life');
     el.style.left = '780px'
-    el.innerHTML = 'LIFE : 3';
+    // el.innerText = 'LIFE :';
+    // document.getElementById('fails').innerText = 2
     document.querySelector(".timer").innerHTML = '00:00:00';
     initGame();
 }
