@@ -106,7 +106,8 @@ function cellClicked(elCell, i, j) {
     } else if (gBoard[i][j].minesAroundCount) {
         elCell.innerHTML = gBoard[i][j].minesAroundCount;
         elCell.classList.add('hide')
-        if ((gGame.markSuccess === (gMinesArr.length)) || (allCellsShown())) {
+        // if ((gGame.markSuccess === (gMinesArr.length)) || (allCellsShown())) {
+        if ( allCellsShown()) {
             winner();
         }
         return
