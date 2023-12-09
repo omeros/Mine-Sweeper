@@ -65,7 +65,7 @@ button{
     background-color: rgb(216, 105, 192);
     border-radius: 10px;
     cursor: pointer;
-    
+ 
 }
 .hide{
     background-color: rgb(170, 190, 235);
@@ -76,7 +76,7 @@ th,td {
     border: 1px solid black;
     width: 20px;
     height: 20px;
-    
+    text-align: center;
 }
 
 
